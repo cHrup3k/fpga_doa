@@ -1,0 +1,79 @@
+sprawdz pdm_udp_stereo_shared.py czy rzeczywiście jest napisany tak że tworząc build z "--pdm-data-pins "E18 G16 E5 F4" \" to na lini data z E18 i L/R=GND zapisze jako mic0, L/R=High jako mic1 potem z G16 analogicznie mic2 i mic3 itp
+
+>> terminal 1 
+$$ step1 - buiLD 
+
+cd ~/fpga/2mic
+
+rm -rf build
+
+python3 pdm_udp_stereo_shared.py \
+    --build \
+    --pdm-clk-pins "F5 E6 H16 F18 B3 K4 F1 E4" \
+    --pdm-data-pins "E18 G16 E5 F4 K5 A2 F2 E1" \
+    --eth-phy 0 \
+    --uart-name=crossover \
+    --with-uartbone \
+    --uart-baudrate=115200 \
+    --integrated-rom-size=0xc000 \
+    --l2-size=2048 \
+    --csr-csv=csr.csv
+
+
+$$ step2 - bitstream into fpga
+
+sudo /opt/oss-cad-suite/bin/openFPGALoader \
+    -c cmsisdap \
+    build/colorlight_i5/gateware/colorlight_i5.bit
+
+
+$$ step 3 - check port
+
+ls -l /dev/ttyACM*
+ls -l /dev/serial/by-id/
+
+$$ step 4 connect litex server 
+
+litex_server --uart --uart-port=/dev/ttyACM1 --uart-baudrate=115200
+
+
+>>terminal 2: 
+$$step 1 check 
+
+python3 - <<'PY'
+from litex import RemoteClient
+
+wb = RemoteClient(
+    host="localhost",
+    port=1234,
+    csr_csv="csr.csv"
+)
+
+wb.open()
+
+print("channels =", wb.regs.pdm_udp_channels.read())
+print("PDM freq =", wb.regs.pdm_udp_pdm_frequency.read())
+print("bytes/sample =", wb.regs.pdm_udp_bytes_per_sample.read())
+print("samples/packet =", wb.regs.pdm_udp_samples_per_packet.read())
+
+wb.close()
+PY
+
+
+ma wyjsc cos ala
+
+channels = 2
+PDM freq = 2500000
+bytes/sample = 1
+samples/packet = 1376
+
+$$ step 2 - capture 
+
+python3 capture_pdm_udp_lossy.py \
+    --seconds 5
+
+albo 
+
+d="capture_$(date +%Y%m%d_%H%M%S)"; mkdir "$d" && cd "$d" && python3 ../capture_pdm_udp_lossy.py --seconds 5 --csr-csv ../csr.csv
+
+d="park_sesnor"; mkdir "$d" && cd "$d" && python3 ../capture_pdm_udp_lossy.py --seconds  --csr-csv ../csr.csv

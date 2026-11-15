@@ -1,0 +1,96 @@
+{
+  "description": "Local repository revisions observed while packaging; LiteX build identifies cfb382f54. Exact historical revisions of every dependency were not logged during synthesis.",
+  "repositories": [
+    {
+      "name": "migen",
+      "url": "https://github.com/m-labs/migen.git",
+      "commit": "4c2ae8dfeea37f235b52acb8166f12acaaae4f7c",
+      "local_tracked_changes": "",
+      "patch": null
+    },
+    {
+      "name": "litex",
+      "url": "https://github.com/enjoy-digital/litex.git",
+      "commit": "cfb382f54f81a1b3e6d7fcaa9db1a011007dd764",
+      "local_tracked_changes": "",
+      "patch": null
+    },
+    {
+      "name": "litex-boards",
+      "url": "https://github.com/enjoy-digital/litex-boards.git",
+      "commit": "b8424ee7487281c29750c75ffee4532d56db5015",
+      "local_tracked_changes": "M litex_boards/targets/colorlight_i5.py",
+      "patch": "patches/litex-boards-dynamic-link.patch"
+    },
+    {
+      "name": "liteiclink",
+      "url": "https://github.com/enjoy-digital/liteiclink.git",
+      "commit": "8a4ce305510614266dad462dbe6b1f154f7487f4",
+      "local_tracked_changes": "",
+      "patch": null
+    },
+    {
+      "name": "litedram",
+      "url": "https://github.com/enjoy-digital/litedram.git",
+      "commit": "3cf585a60a37113f18a9f6c6f3ee774be521623e",
+      "local_tracked_changes": "",
+      "patch": null
+    },
+    {
+      "name": "liteeth",
+      "url": "https://github.com/enjoy-digital/liteeth.git",
+      "commit": "8c9150ff121cb3148d8ea26ce3b1c5200479848d",
+      "local_tracked_changes": "",
+      "patch": null
+    },
+    {
+      "name": "litespi",
+      "url": "https://github.com/enjoy-digital/litespi.git",
+      "commit": "2e211447af44d9f015fd1c50c5b10d399b640972",
+      "local_tracked_changes": "",
+      "patch": null
+    },
+    {
+      "name": "litesata",
+      "url": "https://github.com/enjoy-digital/litesata.git",
+      "commit": "d3d2b92f634730b05005cc565a10b43289b411e7",
+      "local_tracked_changes": "",
+      "patch": null
+    },
+    {
+      "name": "litesdcard",
+      "url": "https://github.com/enjoy-digital/litesdcard.git",
+      "commit": "227d61bc2b92ca56cac78a539b98e378468b1ba1",
+      "local_tracked_changes": "",
+      "patch": null
+    },
+    {
+      "name": "litescope",
+      "url": "https://github.com/enjoy-digital/litescope.git",
+      "commit": "6bf3b92f261c50b8c7c74947f84e692ae846f512",
+      "local_tracked_changes": "",
+      "patch": null
+    },
+    {
+      "name": "pythondata-cpu-vexriscv",
+      "url": "https://github.com/litex-hub/pythondata-cpu-vexriscv.git",
+      "commit": "642ecfed1c84460555d6d803d660cc60cfc1ecb6",
+      "local_tracked_changes": "",
+      "patch": null
+    },
+    {
+      "name": "pythondata-software-compiler_rt",
+      "url": "https://github.com/litex-hub/pythondata-software-compiler_rt.git",
+      "commit": "6eb76609c9627bf26635e57c63fb22cda7115887",
+      "local_tracked_changes": "",
+      "patch": null
+    },
+    {
+      "name": "pythondata-software-picolibc",
+      "url": "https://github.com/litex-hub/pythondata-software-picolibc.git",
+      "commit": "6a13ccce7c575b32c102dd9dc52178505b81fe39",
+      "local_tracked_changes": "",
+      "patch": null
+    }
+  ]
+}

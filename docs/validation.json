@@ -1,0 +1,28 @@
+{
+  "python_syntax": "All packaged Python entry points parse",
+  "shell_syntax": "All shell helpers pass bash -n",
+  "capture_pdm_lossy.py --help": "passed, launched outside project root",
+  "capture_pdm_udp_lossy.py --help": "passed, launched outside project root",
+  "pdm_udp_share.py --help": "passed, launched outside project root",
+  "pdm_udp_stereo_shared.py --help": "passed, launched outside project root",
+  "scripts/read_registers.py --help": "passed, launched outside project root",
+  "scripts/install_dependencies.py --help": "passed, launched outside project root",
+  "receiver_helpers": "Header, fill payload and missing-range checks passed",
+  "original_files": "All package manifest hashes match",
+  "saved_build_configuration": "60 MHz and all 8 DATA-pad assignments match; CSR copied exactly",
+  "files": 3894,
+  "largest_file_bytes": 23444298,
+  "total_bytes": 114020319,
+  "files_above_100_mib": [],
+  "hardware_verification": "Not performed; no FPGA programming, live capture, full synthesis or fresh-OS installation during packaging.",
+  "local_readme_links": "All relative Markdown links resolve",
+  "embedded_git_metadata": "Nested pointer archived as text; no .git files or directories remain",
+  "github_index_check": {
+    "tracked_files_in_disposable_index": 3893,
+    "embedded_gitlinks": [],
+    "original_manifest_files_missing_from_index": [],
+    "git_command": "git add . followed by git add -f build",
+    "actual_project_repository_changed": false,
+    "note": "Used only a temporary Git database/index; no commit, remote or upload."
+  }
+}

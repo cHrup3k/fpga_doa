@@ -1,0 +1,8 @@
+{
+  "tracked_files_in_disposable_index": 3893,
+  "embedded_gitlinks": [],
+  "original_manifest_files_missing_from_index": [],
+  "git_command": "git add . followed by git add -f build",
+  "actual_project_repository_changed": false,
+  "note": "Used only a temporary Git database/index; no commit, remote or upload."
+}

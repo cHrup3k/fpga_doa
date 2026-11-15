@@ -1,0 +1,8 @@
+# Python 3.10 on Ubuntu 22.04.5. FPGA packages are installed by install_dependencies.py.
+numpy==2.2.6
+pyserial==3.5
+packaging>=23
+requests>=2.31
+PyYAML>=6
+meson>=1.2
+ninja>=1.11

@@ -1,0 +1,14 @@
+diff --git a/litex_boards/targets/colorlight_i5.py b/litex_boards/targets/colorlight_i5.py
+index 92db238a..a5fb620c 100755
+--- a/litex_boards/targets/colorlight_i5.py
++++ b/litex_boards/targets/colorlight_i5.py
+@@ -154,7 +154,8 @@ class BaseSoC(SoCCore):
+             self.ethphy = LiteEthPHYRGMII(
+                 clock_pads = self.platform.request("eth_clocks", eth_phy),
+                 pads       = self.platform.request("eth", eth_phy),
+-                tx_delay = 0)
++                tx_delay = 0,
++                with_dynamic_link = True)
+             if with_etherbone:
+                 self.add_etherbone(phy=self.ethphy, ip_address=eth_ip, with_ethmac=with_ethernet)
+             if with_ethernet:
